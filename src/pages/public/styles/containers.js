@@ -22,9 +22,7 @@ const MainContent = styled.div`
   height: calc(100% - 60px);
 `;
 
-const ExpLeft = styled.div`
-  display: flex;
-  flex-direction: column;
+const ExpLeft = styled(ColumnFlex)`
   width: 70%;
 `;
 
@@ -57,9 +55,7 @@ const ExpCard = styled.div`
   }
 `;
 
-const ExpCardBack = styled.div`
-  display: flex;
-  flex-direction: column;
+const ExpCardBack = styled(ColumnFlex)`
   justify-content: space-evenly;
   background-color: ${({ theme: t }) => t.bgCard};
   color: ${({ theme: t }) => t.textCard};
@@ -95,10 +91,6 @@ const LeftSide = styled.div`
   padding-top: 1rem;
 `;
 
-const RightSide = styled.figure`
-  display: flex;
-`;
-
 const FormError = styled.div`
   font-family: Poppins, sans-serif;
   border: solid 2px #e9072b;
@@ -110,21 +102,16 @@ const FormError = styled.div`
   margin: 0 0 1rem 1rem;
 `;
 
+const RightSide = styled.figure`
+  display: flex;
+`;
+
 /** Dividers ******************************************* */
 const LandingDivider = styled.div`
   width: 45%;
   height: 4px;
   background-color: ${({ theme: t }) => t.accent};
   margin-bottom: 3rem;
-`;
-
-/** Images ********************************************* */
-const MailImg = styled.img`
-  width: 100%;
-`;
-
-const Screencap = styled.img`
-  height: 296px;
 `;
 
 export {
@@ -139,8 +126,6 @@ export {
   LandingDivider,
   LeftSide,
   MainContent,
-  MailImg,
   PageContainer,
   RightSide,
-  Screencap,
 };

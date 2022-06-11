@@ -17,8 +17,8 @@ import {
   ExpCardBack,
   ExpCardFront,
   ExpCardInner,
-  Screencap,
 } from './styles/containers';
+import { Screencap } from './styles/media';
 // import { LoadingSpinner } from '../../components';
 import {
   PageTitle,

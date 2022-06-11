@@ -12,9 +12,9 @@ import {
   MainContent,
   LeftSide,
   FormError,
-  MailImg,
   RightSide as Right,
 } from './styles/containers';
+import { MailImg } from './styles/media';
 import { FormSubmitBtn } from './styles/buttons';
 import { Result, LoadingSpinner } from '../../components';
 import {

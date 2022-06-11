@@ -43,7 +43,6 @@ const BaseReactLink = styled(Link)`
 
 const WebsiteName = styled(BaseReactLink)`
   font-size: 2rem;
-  flex-basis: 25%;
   text-decoration: none;
 `;
 

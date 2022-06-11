@@ -7,7 +7,11 @@ import { useDispatch } from 'react-redux';
 import { faMountain } from '@fortawesome/free-solid-svg-icons';
 // components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { HeaderContainer, Nav } from './styles/containers';
+import {
+  HeaderContainer,
+  Nav,
+  WebsiteNameContainer,
+} from './styles/containers';
 import { WebsiteName, StyledNavLink } from './styles/typography';
 import { NavButton } from './styles/buttons';
 // state
@@ -36,10 +40,12 @@ const Header = ({ notFound }) => {
 
   return (
     <HeaderContainer>
-      <WebsiteName to="/">
-        JacobAndes.
-        {makeBreadcrumbs(location.pathname)}
-      </WebsiteName>
+      <WebsiteNameContainer>
+        <WebsiteName to="/">
+          JacobAndes.
+          {makeBreadcrumbs(location.pathname)}
+        </WebsiteName>
+      </WebsiteNameContainer>
       <Nav>
         <StyledNavLink to="/">.is()</StyledNavLink>
         <StyledNavLink to="/experience">.experience()</StyledNavLink>

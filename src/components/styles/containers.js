@@ -62,6 +62,10 @@ const SpinnerContainer = styled.div`
   align-items: center;
 `;
 
+const WebsiteNameContainer = styled.div`
+  flex-basis: 25%;
+`;
+
 /** Accent Div's *************************************** */
 const VerticalAccentDiv = styled.div`
   width: 2px;
@@ -76,5 +80,6 @@ export {
   Nav,
   SocialsContainer,
   SpinnerContainer,
+  WebsiteNameContainer,
   VerticalAccentDiv,
 };

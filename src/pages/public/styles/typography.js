@@ -167,6 +167,10 @@ const ExpCardLink = styled.a`
   &:hover {
     font-style: italic;
   }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
+  }
 `;
 
 const StoryLink = styled.a`
@@ -177,6 +181,10 @@ const StoryLink = styled.a`
 
   &:hover {
     filter: brightness(60%);
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
   }
 `;
 
@@ -189,6 +197,10 @@ const ReCAPTCHALink = styled.a`
   &:hover {
     filter: brightness(80%);
   }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
+  }
 `;
 
 const NotFoundLink = styled(Link)`
@@ -199,6 +211,10 @@ const NotFoundLink = styled(Link)`
 
   &:hover {
     filter: brightness(80%);
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textPrimary};
   }
 `;
 
@@ -222,6 +238,10 @@ const ContactInput = styled.input`
   line-height: 1.5;
   margin-bottom: 1.5rem;
   width: calc(100% - 1rem);
+
+  &:focus {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
+  }
 `;
 
 const ContactTextArea = styled.textarea`
@@ -230,6 +250,10 @@ const ContactTextArea = styled.textarea`
   line-height: 1.5;
   margin-bottom: 1rem;
   width: calc(100% - 1rem);
+
+  &:focus {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
+  }
 `;
 
 export {
