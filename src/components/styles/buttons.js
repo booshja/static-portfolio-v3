@@ -13,9 +13,12 @@ const NavButton = styled.button`
     color: ${({ theme: t }) => t.textPrimary};
   }
 
-  &:hover,
-  :focus {
+  &:hover {
     cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
   }
 `;
 

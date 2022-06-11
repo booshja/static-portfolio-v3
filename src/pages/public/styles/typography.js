@@ -1,5 +1,6 @@
 // dependencies
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 /** Headers ******************************************** */
 const MyName = styled.h1`
@@ -85,6 +86,13 @@ const ReCAPTCHAText = styled.p`
   color: ${({ theme: t }) => t.textPrimary};
   font-size: 1.2rem;
   margin-bottom: 1rem;
+`;
+
+const NotFoundText = styled.p`
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: ${({ theme: t }) => t.textPrimary};
+  margin: 2rem 0 1rem 2rem;
 `;
 
 /** Lists ********************************************** */
@@ -183,6 +191,17 @@ const ReCAPTCHALink = styled.a`
   }
 `;
 
+const NotFoundLink = styled(Link)`
+  font-size: 3rem;
+  font-weight: 700;
+  text-decoration: underline;
+  color: ${({ theme: t }) => t.textSecondary};
+
+  &:hover {
+    filter: brightness(80%);
+  }
+`;
+
 /** Forms ********************************************** */
 const ContactForm = styled.form`
   display: flex;
@@ -227,6 +246,8 @@ export {
   Hi,
   MyName,
   MyTitle,
+  NotFoundLink,
+  NotFoundText,
   PageTitle,
   ReCAPTCHAText,
   ReCAPTCHALink,

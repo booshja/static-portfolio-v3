@@ -54,7 +54,9 @@ const SocialsContainer = styled.aside`
   }
 `;
 
-const SpinnerContainer = styled(ColumnFlex)`
+const SpinnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   font-size: ${(p) => (p.size ? `${p.size}rem` : '10rem')};
   color: ${({ theme: t }) => t.textPrimary};
   align-items: center;

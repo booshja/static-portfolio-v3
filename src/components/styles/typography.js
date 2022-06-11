@@ -27,13 +27,29 @@ const FollowMe = styled.p`
 `;
 
 /** Links ********************************************** */
-const WebsiteName = styled(Link)`
+const BaseReactLink = styled(Link)`
   font-family: Poppins, sans-serif;
   font-weight: 700;
+  color: ${({ theme: t }) => t.textPrimary};
+
+  &:hover {
+    filter: brightness(60%);
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
+  }
+`;
+
+const WebsiteName = styled(BaseReactLink)`
   font-size: 2rem;
   flex-basis: 25%;
   text-decoration: none;
-  color: ${({ theme: t }) => t.textPrimary};
+`;
+
+const ResultLink = styled(BaseReactLink)`
+  font-size: 3rem;
+  text-decoration: underline;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -55,18 +71,6 @@ const StyledNavLink = styled(NavLink)`
 
   &:focus-visible {
     outline: 1px solid ${({ theme: t }) => t.textSecondary};
-  }
-`;
-
-const ResultLink = styled(Link)`
-  font-family: Poppins, sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  text-decoration: underline;
-  color: ${({ theme: t }) => t.textPrimary};
-
-  &:hover {
-    filter: brightness(60%);
   }
 `;
 
