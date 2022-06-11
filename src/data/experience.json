@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "position": 1,
+      "name": "JacobAndes.dev",
+      "description": "This very website you're looking at right now!",
+      "thoughts": "This was a fun project for the static site because I've already been working on the full stack, so putting together just the public static felt super fast!",
+      "tags": [
+        "javascript",
+        "react",
+        "styled-components",
+        "redux toolkit",
+        "cloudflare pages"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1614469723922-c043ad9fd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2709&q=80",
+      "githubUrl": "https://github.com/booshja/static-portfolio-v3",
+      "liveUrl": "https://jacobandes.dev"
+    },
+    {
+      "position": 2,
+      "name": "Painting Joy (Front End)",
+      "description": "Art portfolio and E-Commerce store for a local artist.",
+      "thoughts": "This was a fun challenge as the project encompassed a lot of different requirements and integrations.",
+      "tags": ["javascript", "react", "styled-components", "cloudflare pages"],
+      "imageUrl": "https://images.unsplash.com/photo-1614469723922-c043ad9fd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2709&q=80",
+      "githubUrl": "https://github.com/booshja/Painting-Joy-frontend",
+      "liveUrl": "https://paintingjoy.art"
+    },
+    {
+      "position": 3,
+      "name": "Painting Joy (Back End)",
+      "description": "Art portfolio and E-Commerce store for a local artist.",
+      "thoughts": "This was a fun challenge as the project encompassed a lot of different requirements and integrations.",
+      "tags": ["javascript", "node", "express", "postgres", "heroku"],
+      "imageUrl": "https://images.unsplash.com/photo-1614469723922-c043ad9fd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2709&q=80",
+      "githubUrl": "https://github.com/booshja/Painting-Joy-backend",
+      "liveUrl": null
+    },
+    {
+      "position": 4,
+      "name": "SetPlaylist",
+      "description": "A web app built with Python and Flask for converting your favorite concert setlists into your own Spotify playlist.",
+      "thoughts": "This was a great introduction into different integrations, as well as OAuth with Python.",
+      "tags": ["python", "flask", "sass", "postgres", "heroku"],
+      "imageUrl": "https://images.unsplash.com/photo-1614469723922-c043ad9fd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2709&q=80",
+      "githubUrl": "https://github.com/booshja/SetPlaylist",
+      "liveUrl": null
+    },
+    {
+      "position": 5,
+      "name": "Jobly",
+      "description": "A practice job searching static React app.",
+      "thoughts": "This was a fun coordination between React state and microinteractions.",
+      "tags": ["javascript", "react", "styled-components", "cloudflare pages"],
+      "imageUrl": "https://images.unsplash.com/photo-1614469723922-c043ad9fd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2709&q=80",
+      "githubUrl": "https://github.com/booshja/Jobly",
+      "liveUrl": "https://legal-lip.surge.sh/"
+    }
+  ]
+}
