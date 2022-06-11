@@ -42,10 +42,19 @@ const StyledNavLink = styled(NavLink)`
   font-weight: 400;
   text-decoration: none;
   color: ${({ theme: t }) => t.textPrimary};
+  transition: border-bottom ease-in-out 0.1s;
 
   &.active {
     font-weight: 700;
     font-size: 2rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${({ theme: t }) => t.textSecondary};
   }
 `;
 

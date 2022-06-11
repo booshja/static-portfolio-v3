@@ -8,7 +8,9 @@ const ColumnFlex = styled.div`
 `;
 
 /** Containers ***************************************** */
-const PageContainer = styled(ColumnFlex)`
+const PageContainer = styled.main`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   margin-top: -60px;
@@ -86,9 +88,15 @@ const ExpCardFront = styled.div`
   backface-visibility: hidden;
 `;
 
-const LeftSide = styled(ColumnFlex)`
-  width: 60%;
+const LeftSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: ${(props) => (props.width ? props.width : '60%')};
   padding-top: 1rem;
+`;
+
+const RightSide = styled.figure`
+  display: flex;
 `;
 
 const FormError = styled.div`
@@ -133,5 +141,6 @@ export {
   MainContent,
   MailImg,
   PageContainer,
+  RightSide,
   Screencap,
 };

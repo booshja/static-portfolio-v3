@@ -8,12 +8,6 @@ const ColumnFlex = styled.div`
 `;
 
 /** Containers ***************************************** */
-const SpinnerContainer = styled(ColumnFlex)`
-  font-size: ${(p) => (p.size ? `${p.size}rem` : '10rem')};
-  color: ${({ theme: t }) => t.textPrimary};
-  align-items: center;
-`;
-
 const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
@@ -50,11 +44,20 @@ const SocialsContainer = styled.aside`
     margin-bottom: 2rem;
     color: ${({ theme: t }) => t.textPrimary};
 
-    &:hover,
-    &:focus {
+    &:hover {
       filter: brightness(90%);
     }
+
+    &:focus-visible {
+      outline: 1px solid ${({ theme: t }) => t.textSecondary};
+    }
   }
+`;
+
+const SpinnerContainer = styled(ColumnFlex)`
+  font-size: ${(p) => (p.size ? `${p.size}rem` : '10rem')};
+  color: ${({ theme: t }) => t.textPrimary};
+  align-items: center;
 `;
 
 /** Accent Div's *************************************** */
@@ -65,16 +68,10 @@ const VerticalAccentDiv = styled.div`
   margin-bottom: 2rem;
 `;
 
-/** Images ********************************************* */
-const ResultImg = styled.img`
-  width: 60%;
-`;
-
 export {
   ColumnFlex,
   HeaderContainer,
   Nav,
-  ResultImg,
   SocialsContainer,
   SpinnerContainer,
   VerticalAccentDiv,

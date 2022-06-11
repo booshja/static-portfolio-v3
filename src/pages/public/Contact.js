@@ -5,7 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 // services
 // import { useAddNewMessageMutation } from '../../services/booshjaAPI';
-import sendEmail from '../../services/emailService';
+// import sendEmail from '../../services/emailService';
 // components
 import {
   PageContainer,
@@ -13,6 +13,7 @@ import {
   LeftSide,
   FormError,
   MailImg,
+  RightSide as Right,
 } from './styles/containers';
 import { FormSubmitBtn } from './styles/buttons';
 import { Result, LoadingSpinner } from '../../components';
@@ -33,8 +34,7 @@ const ContactContainer = styled(PageContainer)`
   background-color: ${({ theme: t }) => t.bgSecondary};
 `;
 
-const RightSide = styled.div`
-  display: flex;
+const RightSide = styled(Right)`
   height: 75vh;
   margin-left: 8rem;
 `;
@@ -72,7 +72,7 @@ const Contact = () => {
   const recaptchaChange = async () => {
     if (!emailSent) {
       console.log('Sending email!', data);
-      await sendEmail(data);
+      // await sendEmail(data);
       setEmailSent(true);
       setApproval(true);
       setLoading(false);

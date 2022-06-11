@@ -16,8 +16,8 @@ const PublicLayout = () => {
     <ThemeProvider theme={currentTheme}>
       <Header />
       <Socials />
-      <Copyright />
       <Outlet />
+      <Copyright />
     </ThemeProvider>
   );
 };

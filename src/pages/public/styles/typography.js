@@ -30,20 +30,20 @@ const SkillsHeader = styled.h2`
   margin: 2rem 0;
 `;
 
+const ExpItemName = styled.h3`
+  color: ${({ theme: t }) => t.textPrimary};
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+`;
+
 /** Text *********************************************** */
 const MyTitle = styled.p`
   font-size: 5rem;
   font-weight: 700;
   letter-spacing: 2.5%;
   color: ${({ theme: t }) => t.textSecondary};
-`;
-
-const ExpItemName = styled.p`
-  color: ${({ theme: t }) => t.textPrimary};
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  margin-left: -1rem;
 `;
 
 const ExpItemText = styled.p`

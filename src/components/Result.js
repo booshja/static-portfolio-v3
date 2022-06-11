@@ -5,7 +5,8 @@ import Fireworks from '../assets/fireworks.jpeg';
 import IceCream from '../assets/sad-ice-cream.jpeg';
 // components
 import { ResultText, ResultLink } from './styles/typography';
-import { ColumnFlex, ResultImg } from './styles/containers';
+import { ColumnFlex } from './styles/containers';
+import { ResultImg } from './styles/media';
 
 const Result = ({ approval }) => (
   <ColumnFlex>
