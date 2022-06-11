@@ -77,6 +77,7 @@ textarea {
     min-height: 100vh;
     position: relative;
 }
+.grecaptcha-badge { visibility: hidden; }
 .slide-in-left {
     animation: slide-in-left 400ms ease-in-out forwards;
 }

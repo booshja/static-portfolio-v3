@@ -1,19 +1,13 @@
 // dependencies
 import styled from 'styled-components';
 
+/** Headers ******************************************** */
 const MyName = styled.h1`
   font-size: 12rem;
   font-weight: 700;
   letter-spacing: 5%;
   margin-bottom: 3rem;
   color: ${({ theme: t }) => t.textPrimary};
-`;
-
-const MyTitle = styled.p`
-  font-size: 5rem;
-  font-weight: 700;
-  letter-spacing: 2.5%;
-  color: ${({ theme: t }) => t.textSecondary};
 `;
 
 const PageTitle = styled.h1`
@@ -23,9 +17,25 @@ const PageTitle = styled.h1`
   font-size: 4rem;
 `;
 
-const ExpList = styled.ul`
+const StoryGreeting = styled.h2`
   color: ${({ theme: t }) => t.textPrimary};
-  padding: 2rem 0 3rem 3rem;
+  font-size: 3rem;
+  margin: 3rem 0 1rem 0;
+`;
+
+const SkillsHeader = styled.h2`
+  color: ${({ theme: t }) => t.textPrimary};
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 2rem 0;
+`;
+
+/** Text *********************************************** */
+const MyTitle = styled.p`
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 2.5%;
+  color: ${({ theme: t }) => t.textSecondary};
 `;
 
 const ExpItemName = styled.p`
@@ -49,22 +59,38 @@ const ExpItemText = styled.p`
   }
 `;
 
-const ExpCardLink = styled.a`
-  font-size: 2.2rem;
+const Hi = styled.span`
+  color: inherit;
   font-weight: 700;
+  font-size: 2.8rem;
+  font-family: Poppins, sans-serif;
+`;
+
+const StoryText = styled.p`
+  color: ${({ theme: t }) => t.textPrimary};
+  font-size: 2rem;
+  margin: 1rem 0 1rem 2rem;
   line-height: 1.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: transparent;
+`;
 
-  span {
-    font-size: 3.5rem;
-    margin-right: 1.25rem;
-  }
+const ContactText = styled.p`
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: ${({ theme: t }) => t.textPrimary};
+  margin: 2rem 0 1rem 2rem;
+`;
 
-  &:hover {
-    font-style: italic;
-  }
+const ReCAPTCHAText = styled.p`
+  color: ${({ theme: t }) => t.textPrimary};
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+`;
+
+/** Lists ********************************************** */
+const ExpList = styled.ul`
+  color: ${({ theme: t }) => t.textPrimary};
+  padding: 2rem 0 3rem 3rem;
 `;
 
 const ExpItem = styled.li`
@@ -101,45 +127,6 @@ const Tag = styled.li`
   margin: 0 2rem 2rem 0;
 `;
 
-const Hi = styled.span`
-  color: inherit;
-  font-weight: 700;
-  font-size: 2.8rem;
-  font-family: Poppins, sans-serif;
-`;
-
-const StoryGreeting = styled.h2`
-  color: ${({ theme: t }) => t.textPrimary};
-  font-size: 3rem;
-  margin: 3rem 0 1rem 0;
-`;
-
-const StoryText = styled.p`
-  color: ${({ theme: t }) => t.textPrimary};
-  font-size: 2rem;
-  margin: 1rem 0 1rem 2rem;
-  line-height: 1.5;
-  background: transparent;
-`;
-
-const StoryLink = styled.a`
-  color: ${({ theme: t }) => t.textPrimary};
-  font-size: 2rem;
-  font-weight: 700;
-  text-decoration: underline;
-
-  &:hover {
-    filter: brightness(60%);
-  }
-`;
-
-const SkillsHeader = styled.h2`
-  color: ${({ theme: t }) => t.textPrimary};
-  font-size: 2.6rem;
-  font-weight: 700;
-  margin: 2rem 0;
-`;
-
 const SkillsList = styled.ul`
   padding-left: 2rem;
   height: 40%;
@@ -155,13 +142,48 @@ const Skill = styled.li`
   margin: 1rem 0;
 `;
 
-const ContactText = styled.p`
+/** Links ********************************************** */
+const ExpCardLink = styled.a`
   font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: ${({ theme: t }) => t.textPrimary};
-  margin: 2rem 0 1rem 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 3.5rem;
+    margin-right: 1.25rem;
+  }
+
+  &:hover {
+    font-style: italic;
+  }
 `;
 
+const StoryLink = styled.a`
+  color: ${({ theme: t }) => t.textPrimary};
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: underline;
+
+  &:hover {
+    filter: brightness(60%);
+  }
+`;
+
+const ReCAPTCHALink = styled.a`
+  color: ${({ theme: t }) => t.textPrimary};
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: 700;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+`;
+
+/** Forms ********************************************** */
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -187,7 +209,7 @@ const ContactTextArea = styled.textarea`
   padding: 0.5rem;
   font-size: 1.8rem;
   line-height: 1.5;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   width: calc(100% - 1rem);
 `;
 
@@ -206,6 +228,8 @@ export {
   MyName,
   MyTitle,
   PageTitle,
+  ReCAPTCHAText,
+  ReCAPTCHALink,
   Skill,
   SkillsHeader,
   SkillsList,

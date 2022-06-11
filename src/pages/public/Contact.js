@@ -1,10 +1,11 @@
 // dependencies
-import React, { useState } from 'react';
+import React, { createRef, useState } from 'react';
 import styled from 'styled-components';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 // services
-// import sendEmail from '../../services/emailService';
 // import { useAddNewMessageMutation } from '../../services/booshjaAPI';
+import sendEmail from '../../services/emailService';
 // components
 import {
   PageContainer,
@@ -22,6 +23,8 @@ import {
   ContactLabel,
   ContactText,
   ContactTextArea,
+  ReCAPTCHALink,
+  ReCAPTCHAText,
 } from './styles/typography';
 // assets
 import MailBoxes from '../../assets/po-boxes.jpeg';
@@ -45,39 +48,64 @@ const Contact = () => {
   // const [addNewMessage, { isLoading }] = useAddNewMessageMutation();
 
   const [loading, setLoading] = useState(false);
+  const [data, setData] = useState();
+  const [emailSent, setEmailSent] = useState(false);
   const [approval, setApproval] = useState(false);
   const [error, setError] = useState(false);
 
-  const onSubmit = async (data) => {
+  let content;
+  const recaptchaRef = createRef();
+  const sitekey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+
+  const onSubmit = async (formData) => {
     try {
-      // todo: check against recaptcha
-      setLoading(() => true);
-      console.log(data);
-      // await sendEmail(data);
-      setApproval(() => true);
-      setLoading(() => false);
+      setData(formData);
+      setLoading(true);
+      console.log('executing');
+      recaptchaRef.current.execute();
     } catch (err) {
       setError(true);
+      setLoading(false);
+    }
+  };
+
+  const recaptchaChange = async () => {
+    if (!emailSent) {
+      console.log('Sending email!', data);
+      await sendEmail(data);
+      setEmailSent(true);
+      setApproval(true);
+      setLoading(false);
     }
   };
 
   if (loading) {
-    return (
-      <ContactContainer>
+    content = (
+      <>
         <PageTitle>contact()</PageTitle>
         <MainContent className="center">
           <LoadingSpinner />
         </MainContent>
-      </ContactContainer>
+      </>
     );
-  }
-
-  return (
-    <ContactContainer>
-      <PageTitle>contact()</PageTitle>
-      {approval && <Result approval className="slide-in-left" />}
-      {error && <Result className="slide-in-left" />}
-      {!loading && !approval && !error && (
+  } else if (approval) {
+    content = (
+      <>
+        <PageTitle>contact()</PageTitle>
+        <Result approval className="slide-in-left" />
+      </>
+    );
+  } else if (error) {
+    content = (
+      <>
+        <PageTitle>contact()</PageTitle>
+        <Result className="slide-in-left" />
+      </>
+    );
+  } else {
+    content = (
+      <>
+        <PageTitle>contact()</PageTitle>
         <MainContent className="slide-in-left">
           <LeftSide>
             <ContactText>
@@ -106,6 +134,7 @@ const Contact = () => {
                 id="message"
                 maxLength="200"
                 rows="4"
+                // es-lint-ignore-next-line
                 {...register('message', {
                   required: 'Message is required.',
                   maxLength: {
@@ -117,6 +146,17 @@ const Contact = () => {
               {errors.message && (
                 <FormError>{errors.message.message}</FormError>
               )}
+              <ReCAPTCHAText>
+                This site is protected by reCAPTCHA and the Google&nbsp;
+                <ReCAPTCHALink href="https://policies.google.com/privacy">
+                  Privacy Policy
+                </ReCAPTCHALink>
+                &nbsp;and&nbsp;
+                <ReCAPTCHALink href="https://policies.google.com/terms">
+                  Terms of Service
+                </ReCAPTCHALink>
+                &nbsp;apply.
+              </ReCAPTCHAText>
               <FormSubmitBtn type="submit">Submit</FormSubmitBtn>
             </ContactForm>
           </LeftSide>
@@ -124,7 +164,23 @@ const Contact = () => {
             <MailImg src={MailBoxes} alt="Wall of blue P.O. Boxes." />
           </RightSide>
         </MainContent>
-      )}
+      </>
+    );
+  }
+
+  return (
+    <ContactContainer>
+      {content}
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey={sitekey}
+        onChange={recaptchaChange}
+        onError={() => {
+          setError(true);
+          setLoading(false);
+        }}
+      />
     </ContactContainer>
   );
 };
