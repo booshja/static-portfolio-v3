@@ -1,14 +1,31 @@
 // dependencies
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { breakpoints, breakpointValues } from '../../../styles/breakpoints';
+
+// eslint-disable-next-line
+const { mobileSm, mobileLg, tabletSm, tabletLg, desktopSm, desktopLg } =
+  breakpointValues;
 
 /** Headers ******************************************** */
 const MyName = styled.h1`
-  font-size: 12rem;
+  font-size: 5rem;
   font-weight: 700;
   letter-spacing: 5%;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: ${({ theme: t }) => t.textPrimary};
+
+  ${breakpoints('font-size', 'rem', [
+    { [mobileLg]: 6 },
+    { [tabletSm]: 8 },
+    { [tabletLg]: 10 },
+    { [desktopSm]: 11 },
+    { [desktopLg]: 12 },
+  ])};
+  ${breakpoints('margin-bottom', 'rem', [
+    { [tabletSm]: 2 },
+    { [desktopLg]: 3 },
+  ])};
 `;
 
 const PageTitle = styled.h1`
@@ -41,10 +58,18 @@ const ExpItemName = styled.h3`
 
 /** Text *********************************************** */
 const MyTitle = styled.p`
-  font-size: 5rem;
+  font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 2.5%;
   color: ${({ theme: t }) => t.textSecondary};
+
+  ${breakpoints('font-size', 'rem', [
+    { [mobileLg]: 2.8 },
+    { [tabletSm]: 3.8 },
+    { [tabletLg]: 4.2 },
+    { [desktopSm]: 4.8 },
+    { [desktopLg]: 5 },
+  ])};
 `;
 
 const ExpItemText = styled.p`

@@ -25,10 +25,10 @@ const breakpoints = (
 
 const breakpointValues = {
   mobileSm: 360,
-  mobileLg: 414,
-  tablet: 768,
-  desktopSm: 1024,
-  desktopMd: 1280,
+  mobileLg: 428,
+  tabletSm: 744,
+  tabletLg: 1024,
+  desktopSm: 1280,
   desktopLg: 1440,
 };
 

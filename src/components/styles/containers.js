@@ -1,5 +1,10 @@
 // dependencies
 import styled from 'styled-components';
+import { breakpoints, breakpointValues } from '../../styles/breakpoints';
+
+// eslint-disable-next-line
+const { mobileSm, mobileLg, tabletSm, tabletLg, desktopSm, desktopLg } =
+  breakpointValues;
 
 /** Generics ******************************************* */
 const ColumnFlex = styled.div`
@@ -14,30 +19,42 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   height: 60px;
   width: 100%;
-  padding: 0 3rem 0 3rem;
+  padding: 0 2rem;
   background-color: transparent;
   color: ${({ theme: t }) => t.textPrimary};
   z-index: 100;
+
+  ${breakpoints('padding', '', [{ [desktopLg]: '0 3rem 0 3rem' }])}
 `;
 
 const Nav = styled.nav`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   width: 45%;
+
+  ${breakpoints('display', '', [{ [tabletSm]: 'flex' }])};
+  ${breakpoints('width', '', [
+    { [tabletSm]: '60%' },
+    { [tabletLg]: '45%' },
+    { [desktopSm]: '40%' },
+    { [desktopLg]: '500px' },
+  ])};
 `;
 
 const SocialsContainer = styled.aside`
+  display: none;
   position: fixed;
   left: 1rem;
-  top: calc(25vh - 60px);
-  display: flex;
+  top: calc(50vh - 237.5px);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 40px;
   padding: 1rem 0 5rem 0;
   background-color: transparent;
+
+  ${breakpoints('display', '', [{ [tabletSm]: 'flex' }])};
 
   a {
     font-size: 2.4rem;

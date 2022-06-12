@@ -2,6 +2,11 @@
 import styled from 'styled-components';
 // components
 import { Link, NavLink } from 'react-router-dom';
+import { breakpoints, breakpointValues } from '../../styles/breakpoints';
+
+// eslint-disable-next-line
+const { mobileSm, mobileLg, tabletSm, tabletLg, desktopSm, desktopLg } =
+  breakpointValues;
 
 /** Text *********************************************** */
 const LoadingText = styled.p`
@@ -12,10 +17,12 @@ const LoadingText = styled.p`
 
 const CopyrightText = styled.p`
   color: ${({ theme: t }) => t.textPrimary};
-  font-size: 1.2rem;
+  font-size: 1rem;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+
+  ${breakpoints('font-size', 'rem', [{ [desktopSm]: 1.2 }])}
 `;
 
 const FollowMe = styled.p`

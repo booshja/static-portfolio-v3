@@ -1,5 +1,10 @@
 // dependencies
 import styled from 'styled-components';
+import { breakpoints, breakpointValues } from '../../../styles/breakpoints';
+
+// eslint-disable-next-line
+const { mobileSm, mobileLg, tabletSm, tabletLg, desktopSm, desktopLg } =
+  breakpointValues;
 
 /** Generics ******************************************* */
 const ColumnFlex = styled.div`
@@ -108,10 +113,20 @@ const RightSide = styled.figure`
 
 /** Dividers ******************************************* */
 const LandingDivider = styled.div`
-  width: 45%;
+  width: 70%;
   height: 4px;
   background-color: ${({ theme: t }) => t.accent};
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+
+  ${breakpoints('width', '%', [
+    { [tabletSm]: 55 },
+    { [tabletLg]: 50 },
+    { [desktopLg]: 45 },
+  ])}
+  ${breakpoints('margin-bottom', 'rem', [
+    { [tabletSm]: 2 },
+    { [desktopLg]: 3 },
+  ])}
 `;
 
 export {
